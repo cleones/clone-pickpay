@@ -12,8 +12,16 @@ import Suggestions from '../../components/Suggestions';
 import Activities from '../../components/Activities';
 import Tips from '../../components/Tips';
 import Banner from '../../components/Banner';
+import { StatusBar, Platform } from 'react-native';
+import { useFocusEffect } from '@react-navigation/native';
 
 const Home = () => {
+  useFocusEffect(
+    React.useCallback(() => {
+      StatusBar.setBarStyle('light-content');
+      Platform.OS === 'android' && StatusBar.setBackgroundColor('#000');
+    }, [])
+  );
   return (
     <Wrapper>
       <Container>

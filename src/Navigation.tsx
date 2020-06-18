@@ -43,6 +43,7 @@ const icons: IncoType = {
 const Navigation = () => {
   return (
     <Tab.Navigator
+      initialRouteName='Wallet'
       screenOptions={({ route, navigation }) => ({
         tabBarIcon: ({ color, size, focused }) => {
           const { name: routeName } = route;
